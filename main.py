@@ -50,6 +50,21 @@ def desactivar_botones():
 frame = tk.Frame(ventana, bg="#1e1e2f")
 frame.pack(expand=True)
 
+
+
+def reiniciar_juego():
+    global turno, tablero
+    
+    turno = "X"
+    tablero = [["" for _ in range(3)] for _ in range(3)]
+    
+    for fila in botones:
+        for boton in fila:
+            boton.config(text="", state="normal")
+
+
+
+
 for fila in range(3):
     fila_botones = []
     for columna in range(3):
@@ -70,5 +85,20 @@ for fila in range(3):
         boton.grid(row=fila, column=columna, padx=5, pady=5)
         fila_botones.append(boton)
     botones.append(fila_botones)
+
+
+
+boton_reset = tk.Button(
+    ventana,
+    text="🔄 Reiniciar Juego",
+    font=("Helvetica", 14, "bold"),
+    bg="#ff4d4d",
+    fg="white",
+    activebackground="#cc0000",
+    activeforeground="white",
+    command=reiniciar_juego
+)
+
+boton_reset.pack(pady=10)
 
 ventana.mainloop()
