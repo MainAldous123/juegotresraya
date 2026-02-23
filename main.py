@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 # Crear ventana
 ventana = tk.Tk()
-ventana.title("🎮 Juego Tres en Raya VERSION MAIN CONFLICT")
+ventana.title("🎮 Juego Tres en Raya - Versión Final Integrada")
 ventana.geometry("400x450")
 ventana.config(bg="#1e1e2f")
 
